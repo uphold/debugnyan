@@ -1,0 +1,57 @@
+{
+  "name": "debugnyan",
+  "version": "0.0.1",
+  "description": "A logging library that combines the simplicity and convenience of debug with the power of bunyan",
+  "author": {
+    "email": "rui.marinho@seegno.com",
+    "name": "Rui Marinho",
+    "url": "http://seegno.com"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/seegno/debugnyan/",
+  "bugs": "https://github.com/seegno/debugnyan/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/seegno/debugnyan.git"
+  },
+  "main": "./dist/index.js",
+  "keywords": [
+    "bridge",
+    "bunyan",
+    "debug",
+    "debugging",
+    "json",
+    "log",
+    "logging"
+  ],
+  "options": {
+    "mocha": "--compilers js:babel/register --require should test"
+  },
+  "scripts": {
+    "build": "rm -rf dist/* && ./node_modules/.bin/babel src/ --loose --plugins object-assign --out-dir dist/",
+    "changelog": "github_changelog_generator",
+    "cover": "./node_modules/.bin/babel-node node_modules/.bin/isparta cover --report html node_modules/.bin/_mocha -- $npm_package_options_mocha",
+    "coveralls": "./node_modules/.bin/babel-node node_modules/.bin/isparta cover --report html node_modules/.bin/_mocha --report lcovonly -- $npm_package_options_mocha && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "lint": "eslint src",
+    "prepublish": "npm test && npm run build",
+    "test": "./node_modules/.bin/mocha $npm_package_options_mocha"
+  },
+  "dependencies": {
+    "bunyan": "^1.4.0",
+    "debug": "^2.2.0"
+  },
+  "devDependencies": {
+    "babel": "^5.6.14",
+    "babel-eslint": "^3.1.23",
+    "babel-plugin-object-assign": "^1.2.0",
+    "coveralls": "^2.11.2",
+    "eslint": "^0.24.1",
+    "eslint-plugin-babel": "^1.1.0",
+    "isparta": "^3.0.3",
+    "mocha": "^2.0.1",
+    "should": "^7.0.1"
+  },
+  "engines": {
+    "node": ">= 0.10"
+  }
+}
