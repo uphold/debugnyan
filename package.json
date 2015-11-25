@@ -46,7 +46,7 @@
     "babel-plugin-object-assign": "^1.2.0",
     "coveralls": "^2.11.2",
     "eslint": "^0.24.1",
-    "eslint-plugin-babel": "^1.1.0",
+    "eslint-plugin-babel": "^3.0.0",
     "isparta": "^3.0.3",
     "mocha": "^2.0.1",
     "should": "^7.0.1"
