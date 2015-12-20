@@ -1,3 +1,4 @@
-{
-  "esnext": true
-}
+plugins:
+  - jscs-config-seegno
+
+preset: seegno

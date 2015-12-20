@@ -25,33 +25,37 @@
     "logging"
   ],
   "options": {
-    "mocha": "--compilers js:babel/register --require should test"
+    "mocha": "--compilers js:babel-register --require should test"
   },
   "scripts": {
-    "build": "rm -rf dist/* && ./node_modules/.bin/babel src/ --loose --plugins object-assign --out-dir dist/",
-    "changelog": "github_changelog_generator",
-    "cover": "./node_modules/.bin/babel-node node_modules/.bin/isparta cover --report html node_modules/.bin/_mocha -- $npm_package_options_mocha",
-    "coveralls": "./node_modules/.bin/babel-node node_modules/.bin/isparta cover --report html node_modules/.bin/_mocha --report lcovonly -- $npm_package_options_mocha && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
-    "lint": "eslint src",
+    "build": "rm -rf dist/* && babel src/ --out-dir dist/",
+    "changelog": "github_changelog_generator --no-issues --header-label '# Changelog'",
+    "cover": "babel-node isparta cover --report html _mocha -- $npm_package_options_mocha",
+    "coveralls": "babel-node isparta cover --report html _mocha --report lcovonly -- $npm_package_options_mocha && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "lint": "eslint src && jscs src",
     "prepublish": "npm test && npm run build",
-    "test": "./node_modules/.bin/mocha $npm_package_options_mocha"
+    "test": "mocha $npm_package_options_mocha"
   },
   "dependencies": {
     "bunyan": "^1.4.0",
     "debug": "^2.2.0"
   },
   "devDependencies": {
-    "babel": "^5.6.14",
-    "babel-eslint": "^3.1.23",
-    "babel-plugin-object-assign": "^1.2.0",
+    "babel-cli": "^6.3.17",
+    "babel-eslint": "^4.1.6",
+    "babel-preset-es2015-node4": "^2.0.2",
+    "babel-register": "^6.3.13",
     "coveralls": "^2.11.2",
-    "eslint": "^0.24.1",
-    "eslint-plugin-babel": "^1.1.0",
-    "isparta": "^3.0.3",
+    "eslint": "^1.10.3",
+    "eslint-config-seegno": "^1.2.0",
+    "eslint-plugin-babel": "^3.0.0",
+    "isparta": "^4.0.0",
+    "jscs": "^2.7.0",
+    "jscs-config-seegno": "^1.1.0",
     "mocha": "^2.0.1",
-    "should": "^7.0.1"
+    "should": "^8.0.2"
   },
   "engines": {
-    "node": ">= 0.10"
+    "node": ">= 4"
   }
 }

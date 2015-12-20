@@ -32,7 +32,7 @@ export default function debugnyan(name, options, config) {
   }, config);
 
   if (!loggers[root]) {
-    loggers[root] = bunyan.createLogger(Object.assign({}, options, { name: root, level }));
+    loggers[root] = bunyan.createLogger(Object.assign({}, options, { level, name: root }));
   }
 
   let child = loggers[root];
@@ -49,8 +49,8 @@ export default function debugnyan(name, options, config) {
     }
 
     options = Object.assign({}, options, {
-      [`${config.prefix.repeat(i - 1)}${config.suffix}`]: current,
-      level
+      level,
+      [`${config.prefix.repeat(i - 1)}${config.suffix}`]: current
     });
 
     child = next.child(options, true);
