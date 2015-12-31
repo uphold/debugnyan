@@ -1,6 +1,6 @@
 {
   "name": "debugnyan",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A logging library that combines the simplicity and convenience of debug with the power of bunyan",
   "author": {
     "email": "rui.marinho@seegno.com",

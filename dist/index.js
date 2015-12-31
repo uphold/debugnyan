@@ -1,17 +1,14 @@
+'use strict';
 
+var _slicedToArray = (function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; })();
 /**
  * Module dependencies.
  */
 
-'use strict';
-
-exports.__esModule = true;
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-exports['default'] = debugnyan;
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = debugnyan;
 
 var _bunyan = require('bunyan');
 
@@ -21,43 +18,46 @@ var _debug = require('debug');
 
 var _debug2 = _interopRequireDefault(_debug);
 
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 /**
  * Loggers.
  */
 
-var loggers = Object.create(null);
+const loggers = Object.create(null);
 
 /**
  * Default level.
  */
 
-var level = _bunyan2['default'].FATAL + 1;
+const level = _bunyan2.default.FATAL + 1;
 
 /**
  * Export `debugnyan`.
  */
 
 function debugnyan(name, options, config) {
-  var components = name.split(':');
-  var root = components[0];
+  const components = name.split(':');
 
-  config = _extends({
+  var _components = _slicedToArray(components, 1);
+
+  const root = _components[0];
+
+  config = Object.assign({
     prefix: 'sub',
     suffix: 'component'
   }, config);
 
   if (!loggers[root]) {
-    loggers[root] = _bunyan2['default'].createLogger(_extends({}, options, { name: root, level: level }));
+    loggers[root] = _bunyan2.default.createLogger(Object.assign({}, options, { level, name: root }));
   }
 
-  var child = loggers[root];
+  let child = loggers[root];
 
-  for (var i = 1; i < components.length; i++) {
-    var _extends2;
-
-    var current = components[i];
-    var next = loggers[components.slice(0, i).join(':')];
-    var childName = components.slice(0, i + 1).join(':');
+  for (let i = 1; i < components.length; i++) {
+    const current = components[i];
+    const next = loggers[components.slice(0, i).join(':')];
+    const childName = components.slice(0, i + 1).join(':');
 
     if (loggers[childName]) {
       child = loggers[childName];
@@ -65,18 +65,19 @@ function debugnyan(name, options, config) {
       continue;
     }
 
-    options = _extends({}, options, (_extends2 = {}, _extends2['' + config.prefix.repeat(i - 1) + config.suffix] = current, _extends2.level = level, _extends2));
+    options = Object.assign({}, options, {
+      level,
+      [`${ config.prefix.repeat(i - 1) }${ config.suffix }`]: current
+    });
 
     child = next.child(options, true);
 
     loggers[childName] = child;
   }
 
-  if (_debug2['default'].enabled(name)) {
-    child.level(_bunyan2['default'].DEBUG);
+  if (_debug2.default.enabled(name)) {
+    child.level(_bunyan2.default.DEBUG);
   }
 
   return loggers[name];
 }
-
-module.exports = exports['default'];
