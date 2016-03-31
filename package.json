@@ -51,7 +51,7 @@
     "eslint-plugin-babel": "^3.0.0",
     "isparta": "^4.0.0",
     "jscs": "^2.7.0",
-    "jscs-config-seegno": "^1.1.0",
+    "jscs-config-seegno": "^2.0.0",
     "mocha": "^2.0.1",
     "should": "^8.0.2"
   },
