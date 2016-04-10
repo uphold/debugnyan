@@ -37,23 +37,24 @@
     "test": "mocha $npm_package_options_mocha"
   },
   "dependencies": {
-    "bunyan": "^1.4.0",
+    "bunyan": "^1.8.0",
     "debug": "^2.2.0"
   },
   "devDependencies": {
-    "babel-cli": "^6.3.17",
-    "babel-eslint": "^4.1.6",
-    "babel-preset-es2015-node4": "^2.0.2",
-    "babel-register": "^6.3.13",
-    "coveralls": "^2.11.2",
-    "eslint": "^1.10.3",
-    "eslint-config-seegno": "^1.2.0",
-    "eslint-plugin-babel": "^3.0.0",
+    "babel-cli": "^6.7.5",
+    "babel-eslint": "^6.0.2",
+    "babel-preset-es2015-node4": "^2.1.0",
+    "babel-register": "^6.7.2",
+    "coveralls": "^2.11.9",
+    "eslint": "^2.7.0",
+    "eslint-config-seegno": "^4.0.0",
+    "eslint-plugin-babel": "^3.2.0",
+    "eslint-plugin-sort-class-members": "^1.0.1",
     "isparta": "^4.0.0",
-    "jscs": "^2.7.0",
-    "jscs-config-seegno": "^1.1.0",
-    "mocha": "^2.0.1",
-    "should": "^8.0.2"
+    "jscs": "^2.11.0",
+    "jscs-config-seegno": "^2.0.0",
+    "mocha": "^2.4.5",
+    "should": "^8.3.0"
   },
   "engines": {
     "node": ">= 4"
