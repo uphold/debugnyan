@@ -64,6 +64,12 @@ var logger = require('debugnyan')('foo', {}, { suffix: 'module' });
 $ npm test
 ```
 
+## Release
+
+```sh
+$ npm version [<newversion> | major | minor | patch] -m "Release %s"
+```
+
 ## License
 
 MIT
