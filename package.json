@@ -47,7 +47,7 @@
     "babel-register": "^6.7.2",
     "coveralls": "^2.11.9",
     "eslint": "^2.7.0",
-    "eslint-config-seegno": "^4.0.0",
+    "eslint-config-seegno": "^5.0.0",
     "eslint-plugin-babel": "^3.2.0",
     "eslint-plugin-sort-class-members": "^1.0.1",
     "isparta": "^4.0.0",
