@@ -46,7 +46,7 @@
     "babel-preset-es2015-node4": "^2.1.0",
     "babel-register": "^6.7.2",
     "coveralls": "^2.11.9",
-    "eslint": "^2.7.0",
+    "eslint": "^3.5.0",
     "eslint-config-seegno": "^4.0.0",
     "eslint-plugin-babel": "^3.2.0",
     "eslint-plugin-sort-class-members": "^1.0.1",
