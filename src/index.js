@@ -49,8 +49,8 @@ export default function debugnyan(name, options, config) {
     }
 
     options = Object.assign({}, options, {
-      level,
-      [`${config.prefix.repeat(i - 1)}${config.suffix}`]: current
+      [`${config.prefix.repeat(i - 1)}${config.suffix}`]: current,
+      level
     });
 
     child = next.child(options, true);
