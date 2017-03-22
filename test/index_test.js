@@ -66,6 +66,12 @@ describe('debugnyan', () => {
       logger.fields.component.should.equal('bar');
     });
 
+    it('should accept the `simple` option', () => {
+      const logger = debugnyan('foo:biz', {}, { simple: false });
+
+      logger.should.not.have.property('_isSimpleChild');
+    });
+
     it('should be on the debug level if `DEBUG` matches logger name', () => {
       debug.enable('foo:bar');
 
