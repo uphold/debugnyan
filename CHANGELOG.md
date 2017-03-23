@@ -1,5 +1,12 @@
 # Changelog
 
+## [v2.0.1](https://github.com/seegno/debugnyan/tree/v2.0.1) (2017-03-23)
+[Full Changelog](https://github.com/seegno/debugnyan/compare/v2.0.0...v2.0.1)
+
+**Merged pull requests:**
+
+- Fix travis image badge [\#95](https://github.com/seegno/debugnyan/pull/95) ([ruimarinho](https://github.com/ruimarinho))
+
 ## [v2.0.0](https://github.com/seegno/debugnyan/tree/v2.0.0) (2017-03-23)
 [Full Changelog](https://github.com/seegno/debugnyan/compare/v1.0.0...v2.0.0)
 
