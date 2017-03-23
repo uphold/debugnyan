@@ -3,8 +3,8 @@
  * Module dependencies.
  */
 
-import bunyan from 'bunyan';
-import debug from 'debug';
+const bunyan = require('bunyan');
+const debug = require('debug');
 
 /**
  * Loggers.
@@ -22,7 +22,7 @@ const level = bunyan.FATAL + 1;
  * Export `debugnyan`.
  */
 
-export default function debugnyan(name, options, {
+module.exports = function debugnyan(name, options, {
   prefix = 'sub',
   simple = true,
   suffix = 'component'
@@ -62,4 +62,4 @@ export default function debugnyan(name, options, {
   }
 
   return loggers[name];
-}
+};
