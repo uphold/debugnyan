@@ -34,8 +34,8 @@ Consider a logger named `foo:bar:biz`:
 - and a `bunyan` (simple) child logger with property `component` equal to `bar`.
 
 ```js
-var logger1 = require('debugnyan')('foo');
-var logger2 = require('debugnyan')('foo:bar');
+const logger1 = require('debugnyan')('foo');
+const logger2 = require('debugnyan')('foo:bar');
 
 logger1.debug('net');
 logger2.debug('qux');
@@ -61,13 +61,13 @@ DEBUG=foo:bar node example.js
 The `prefix` and `suffix` for each component is also customizable:
 
 ```js
-var logger = require('debugnyan')('foo', {}, { suffix: 'module' });
+const logger = require('debugnyan')('foo', {}, { suffix: 'module' });
 ```
 
 When creating a _child_ logger you may also override the default `simple` behavior:
 
 ```js
-var logger = require('debugnyan')('foo:bar', {}, { simple: false });
+const logger = require('debugnyan')('foo', {}, { suffix: 'module', simple: false });
 ```
 
 ## Tests
