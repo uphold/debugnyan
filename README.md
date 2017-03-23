@@ -86,7 +86,7 @@ const logger = require('debugnyan')('foo', {}, { suffix: 'module', simple: false
 
 MIT
 
-[npm-image]: https://img.shields.io/npm/v/debugnyan.svg
+[npm-image]: https://img.shields.io/npm/v/debugnyan.svg?style=flat-square
 [npm-url]: https://www.npmjs.com/package/debugnyan
-[travis-image]: https://travis-ci.org/seegno/debugnyan.svg
+[travis-image]: https://travis-ci.org/seegno/debugnyan.svg?style=flat-square
 [travis-url]: https://travis-ci.org/seegno/debugnyan
