@@ -9,10 +9,16 @@ A logging library that combines the simplicity and convenience of [debug](https:
 
 ## Installation
 
-Install the package via `npm`:
+Install the package via `yarn`:
 
-```bash
-$ npm install debugnyan --save
+```sh
+❯ yarn add debugnyan
+```
+
+or via `npm`:
+
+```sh
+❯ npm install debugnyan --save
 ```
 
 ## Usage
@@ -67,13 +73,13 @@ var logger = require('debugnyan')('foo:bar', {}, { simple: false });
 ## Tests
 
 ```
-$ npm test
+❯ npm test
 ```
 
 ## Release
 
 ```sh
-$ npm version [<newversion> | major | minor | patch] -m "Release %s"
+❯ npm version [<new version> | major | minor | patch] -m "Release %s"
 ```
 
 ## License
