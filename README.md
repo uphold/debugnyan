@@ -58,6 +58,12 @@ The `prefix` and `suffix` for each component is also customizable:
 var logger = require('debugnyan')('foo', {}, { suffix: 'module' });
 ```
 
+When creating a _child_ logger you may also override the default `simple` behavior:
+
+```js
+var logger = require('debugnyan')('foo:bar', {}, { simple: false });
+```
+
 ## Tests
 
 ```

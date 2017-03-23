@@ -22,14 +22,13 @@ const level = bunyan.FATAL + 1;
  * Export `debugnyan`.
  */
 
-export default function debugnyan(name, options, config) {
+export default function debugnyan(name, options, {
+  prefix = 'sub',
+  simple = true,
+  suffix = 'component'
+} = {}) {
   const components = name.split(':');
   const [root] = components;
-
-  config = Object.assign({
-    prefix: 'sub',
-    suffix: 'component'
-  }, config);
 
   if (!loggers[root]) {
     loggers[root] = bunyan.createLogger(Object.assign({}, options, { level, name: root }));
@@ -49,11 +48,11 @@ export default function debugnyan(name, options, config) {
     }
 
     options = Object.assign({}, options, {
-      [`${config.prefix.repeat(i - 1)}${config.suffix}`]: current,
+      [`${prefix.repeat(i - 1)}${suffix}`]: current,
       level
     });
 
-    child = next.child(options, true);
+    child = next.child(options, simple);
 
     loggers[childName] = child;
   }
