@@ -1,5 +1,13 @@
 # Changelog
 
+## [v2.0.2](https://github.com/uphold/debugnyan/tree/v2.0.2) (2018-06-07)
+[Full Changelog](https://github.com/uphold/debugnyan/compare/v2.0.1...v2.0.2)
+
+**Merged pull requests:**
+
+- Update ownership [\#97](https://github.com/uphold/debugnyan/pull/97) ([rplopes](https://github.com/rplopes))
+- Update resolved bunyan version [\#96](https://github.com/uphold/debugnyan/pull/96) ([rplopes](https://github.com/rplopes))
+
 ## [v2.0.1](https://github.com/uphold/debugnyan/tree/v2.0.1) (2017-03-23)
 [Full Changelog](https://github.com/uphold/debugnyan/compare/v2.0.0...v2.0.1)
 
