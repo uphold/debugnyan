@@ -11,8 +11,8 @@
     "log",
     "logging"
   ],
-  "homepage": "https://github.com/seegno/debugnyan/",
-  "bugs": "https://github.com/seegno/debugnyan/issues",
+  "homepage": "https://github.com/uphold/debugnyan/",
+  "bugs": "https://github.com/uphold/debugnyan/issues",
   "license": "MIT",
   "author": {
     "name": "Rui Marinho",
@@ -21,7 +21,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/seegno/debugnyan.git"
+    "url": "https://github.com/uphold/debugnyan.git"
   },
   "scripts": {
     "changelog": "github_changelog_generator --header-label='# Changelog' --future-release=v$npm_config_future_release && sed -i '' -e :a -e '$d;N;2,4ba' -e 'P;D' CHANGELOG.md",
