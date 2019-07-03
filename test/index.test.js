@@ -28,6 +28,12 @@ describe('debugnyan', () => {
     expect(logger.level()).toEqual(Logger.FATAL + 1);
   });
 
+  it('should allow customizing the logging level', () => {
+    const logger = debugnyan('bar', { level: Logger.INFO });
+
+    expect(logger.level()).toEqual(Logger.INFO);
+  });
+
   it('should accept a dictionary of options', () => {
     const logger = debugnyan('biz', { bar: 'qux', biz: 'net' });
 
