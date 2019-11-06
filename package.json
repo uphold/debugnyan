@@ -24,19 +24,26 @@
     "url": "https://github.com/uphold/debugnyan.git"
   },
   "scripts": {
-    "changelog": "github_changelog_generator --header-label='# Changelog' --future-release=v$npm_config_future_release && sed -i '' -e :a -e '$d;N;2,4ba' -e 'P;D' CHANGELOG.md",
-    "lint": "eslint index.js test",
-    "test": "jest --coverage --env=node",
-    "version": "npm run changelog --future-release=$npm_package_version && git add -A CHANGELOG.md"
+    "changelog": "uphold-scripts changelog v$npm_package_version",
+    "lint": "uphold-scripts lint",
+    "release": "uphold-scripts release",
+    "test": "uphold-scripts test",
+    "version": "uphold-scripts version"
+  },
+  "pre-commit": [
+    "lint"
+  ],
+  "jest": {
+    "collectCoverageFrom": [
+      "index.js"
+    ]
   },
   "dependencies": {
     "bunyan": "^1.8.1",
     "debug": "^2.2.0"
   },
   "devDependencies": {
-    "eslint": "^3.6.1",
-    "eslint-config-seegno": "^9.0.0",
-    "jest": "^19.0.2"
+    "uphold-scripts": "^0.4.0"
   },
   "engines": {
     "node": ">=6"

@@ -73,13 +73,13 @@ const logger = require('debugnyan')('foo', {}, { suffix: 'module', simple: false
 ## Tests
 
 ```
-❯ npm test
+❯ yarn test
 ```
 
 ## Release
 
 ```sh
-❯ npm version [<new version> | major | minor | patch] -m "Release %s"
+❯ yarn release ["major" | "minor" | "patch" | <custom version number>] # default: patch
 ```
 
 ## License

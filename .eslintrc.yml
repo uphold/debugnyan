@@ -1,4 +1,1 @@
-extends: seegno
-env:
-  jest: true
-  mocha: false
+extends: uphold
