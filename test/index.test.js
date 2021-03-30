@@ -85,25 +85,5 @@ describe('debugnyan', () => {
 
       expect(logger1).toEqual(logger2);
     });
-
-    it('should enable the debug level if parent is declared before children', () => {
-      debug.enable('zab:oof');
-
-      const logger1 = debugnyan('zab:oof');
-      const logger2 = debugnyan('zab:oof:zib');
-
-      expect(logger1.level()).toEqual(Logger.DEBUG);
-      expect(logger2.level()).toEqual(Logger.DEBUG);
-    });
-
-    it('should not enable the debug level if parent is declared after children', () => {
-      debug.enable('kao:oob');
-
-      const logger1 = debugnyan('kao:oob:zib');
-      const logger2 = debugnyan('kao:oob');
-
-      expect(logger1.level()).not.toEqual(Logger.DEBUG);
-      expect(logger2.level()).toEqual(Logger.DEBUG);
-    });
   });
 });
