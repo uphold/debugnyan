@@ -1,0 +1,23 @@
+name: Tests
+
+on: [push]
+
+jobs:
+  unit:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [ '8', '12', '14' ]
+
+    container:
+      image: node:${{ matrix.node }}-alpine
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install dependencies
+      run: |
+        echo "::group::Install project dependencies"
+        yarn install --frozen-lockfile
+        echo "::endgroup::"
+    - run: yarn lint
+    - run: yarn test
