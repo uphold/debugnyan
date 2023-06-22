@@ -21,7 +21,7 @@ const level = bunyan.FATAL + 1;
  * Export `debugnyan`.
  */
 
-module.exports = function debugnyan(name, options, { prefix = 'sub', simple = true, suffix = 'component' } = {}) {
+module.exports = function debugnyan(name, options = {}, { prefix = 'sub', simple = true, suffix = 'component' } = {}) {
   const [root, ...components] = name.split(':');
 
   if (!loggers[root]) {
