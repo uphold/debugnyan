@@ -43,7 +43,7 @@ module.exports = function debugnyan(name, options, { prefix = 'sub', simple = tr
   }
 
   if (debug.enabled(name)) {
-    loggers[name].level(bunyan.DEBUG);
+    loggers[name].level(options?.level ?? bunyan.DEBUG);
   }
 
   return loggers[name];

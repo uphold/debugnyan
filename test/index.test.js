@@ -40,12 +40,20 @@ describe('debugnyan', () => {
     expect(logger.fields.name).toEqual('nor');
   });
 
-  it('should be on the debug level if `DEBUG` matches logger name', () => {
+  it('should be on the default debug level if `DEBUG` matches logger name', () => {
     debug.enable('abc');
 
     const logger = debugnyan('abc');
 
     expect(logger.level()).toEqual(Logger.DEBUG);
+  });
+
+  it('should be on the specified level if `DEBUG` matches logger name', () => {
+    debug.enable('abc');
+
+    const logger = debugnyan('abc', { level: 'warn' });
+
+    expect(logger.level()).toEqual(Logger.WARN);
   });
 
   describe('namespacing', () => {
