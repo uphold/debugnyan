@@ -78,9 +78,7 @@ const logger = require('debugnyan')('foo', {}, { suffix: 'module', simple: false
 
 ## Release
 
-```sh
-❯ yarn release ["major" | "minor" | "patch" | <custom version number>] # default: patch
-```
+Click on `Run Workflow` on the [release github action](https://github.com/uphold/debugnyan/actions/workflows/release.yaml)
 
 ## License
 

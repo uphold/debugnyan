@@ -1,0 +1,56 @@
+name: Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      VERSION_BUMP:
+        description: 'The version bump'
+        type: choice
+        options:
+        - major
+        - minor
+        - patch
+        default: minor
+        required: true
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    concurrency: 1
+    environment: release
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+      with:
+        token: ${{ secrets.RELEASE_GITHUB_TOKEN }}
+
+    - name: Setup Node.js version
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18
+
+    - name: Enable yarn
+      run: corepack enable
+
+    - name: Install dependencies
+      run: |
+        echo "::group::Install required packages"
+        sudo apt update
+        sudo apt install -y pcregrep golang
+        echo "::endgroup::"
+
+        echo "::group::Install project dependencies"
+        yarn install --frozen-lockfile
+        echo "::endgroup::"
+
+    - name: Configure git
+      run: |
+        git config user.name "Uphold"
+        git config user.email "bot@uphold.com"
+
+    - name: Generate release
+      id: generate-release
+      env:
+        GITHUB_TOKEN: ${{ secrets.RELEASE_GITHUB_TOKEN }}
+      run: yarn run release --increment "${{ github.event.inputs.VERSION_BUMP }}" -V

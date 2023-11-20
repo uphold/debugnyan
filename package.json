@@ -43,6 +43,7 @@
     "debug": "^4.3.4"
   },
   "devDependencies": {
+    "release-it": "^17.0.0",
     "uphold-scripts": "^0.7.1"
   },
   "engines": {
