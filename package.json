@@ -47,7 +47,7 @@
     "uphold-scripts": "^0.7.1"
   },
   "engines": {
-    "node": ">=14"
+    "node": ">=18"
   },
   "types": "index.d.ts"
 }
