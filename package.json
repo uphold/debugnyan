@@ -24,11 +24,9 @@
     "url": "https://github.com/uphold/debugnyan.git"
   },
   "scripts": {
-    "changelog": "uphold-scripts changelog $npm_package_version",
     "lint": "uphold-scripts lint .",
-    "release": "uphold-scripts release",
-    "test": "uphold-scripts test",
-    "version": "uphold-scripts version"
+    "release": "release-it",
+    "test": "uphold-scripts test"
   },
   "pre-commit": [
     "lint"
