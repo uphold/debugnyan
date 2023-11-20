@@ -55,4 +55,4 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.RELEASE_GITHUB_TOKEN }}
       run: |
         echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" > .npmrc
-        yarn run release --increment ${{ github.event.inputs.VERSION_BUMP }} -V
+        npm run release -- --increment ${{ github.event.inputs.VERSION_BUMP }} -V
