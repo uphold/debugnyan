@@ -1,5 +1,14 @@
 # Changelog
 
+## [v4.0.0](https://github.com/uphold/debugnyan/releases/tag/v4.0.0) (2023-11-20)
+- Fix release workflow [\#147](https://github.com/uphold/debugnyan/pull/147) ([satazor](https://github.com/satazor))
+- Pass NPM_TOKEN to release step [\#146](https://github.com/uphold/debugnyan/pull/146) ([satazor](https://github.com/satazor))
+- Use release-it in release script [\#144](https://github.com/uphold/debugnyan/pull/144) ([satazor](https://github.com/satazor))
+- Add release workflow [\#143](https://github.com/uphold/debugnyan/pull/143) ([satazor](https://github.com/satazor))
+- Use specified log level [\#142](https://github.com/uphold/debugnyan/pull/142) ([satazor](https://github.com/satazor))
+- Bump dependencies [\#135](https://github.com/uphold/debugnyan/pull/135) ([diogotorres97](https://github.com/diogotorres97))
+- Bump vulnerable dependencies [\#134](https://github.com/uphold/debugnyan/pull/134) ([jspranger](https://github.com/jspranger))
+
 ## [3.0.0](https://github.com/uphold/debugnyan/releases/tag/v3.0.0) (2021-09-17)
 - Fix version on changelog script [\#128](https://github.com/uphold/debugnyan/pull/128) ([kurayama](https://github.com/kurayama))
 - Add type definitions to tarball [\#127](https://github.com/uphold/debugnyan/pull/127) ([Americas](https://github.com/Americas))

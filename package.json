@@ -1,6 +1,6 @@
 {
   "name": "debugnyan",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "description": "A logging library that combines the simplicity and convenience of debug with the power of bunyan",
   "keywords": [
     "bridge",
