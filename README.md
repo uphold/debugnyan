@@ -88,7 +88,7 @@ You may also set the log level via the `LOG_LEVEL` environment variable. However
 
 ## Release
 
-Click on `Run Workflow` on the [release github action](https://github.com/uphold/debugnyan/actions/workflows/release.yaml)
+Click `Run Workflow` on the [release github action](https://github.com/uphold/debugnyan/actions/workflows/release.yaml).
 
 ## License
 
