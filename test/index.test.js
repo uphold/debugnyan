@@ -1,3 +1,5 @@
+/* eslint-disable no-process-env */
+
 /**
  * Module dependencies.
  */
@@ -7,6 +9,10 @@ const debug = require('debug');
 const debugnyan = require('..');
 
 describe('debugnyan', () => {
+  beforeEach(() => {
+    delete process.env.LOG_LEVEL;
+  });
+
   it('should return an instance of a bunyan logger', () => {
     const logger = debugnyan('foo');
 
@@ -48,10 +54,20 @@ describe('debugnyan', () => {
     expect(logger.level()).toEqual(Logger.DEBUG);
   });
 
-  it('should be on the specified level if `DEBUG` matches logger name', () => {
+  it('should be on the specified level via `options.level` if `DEBUG` matches logger name', () => {
     debug.enable('abc');
+    process.env.LOG_LEVEL = 'info';
 
     const logger = debugnyan('abc', { level: 'warn' });
+
+    expect(logger.level()).toEqual(Logger.WARN);
+  });
+
+  it('should be on the specified level via `process.env.LOG_LEVEL` if `DEBUG` matches logger name', () => {
+    debug.enable('abc');
+    process.env.LOG_LEVEL = 'warn';
+
+    const logger = debugnyan('abc');
 
     expect(logger.level()).toEqual(Logger.WARN);
   });

@@ -70,6 +70,16 @@ When creating a _child_ logger you may also override the default `simple` behavi
 const logger = require('debugnyan')('foo', {}, { suffix: 'module', simple: false });
 ```
 
+### Log level
+
+The `level` bunyan option is respected if the logger output is active.
+
+```js
+const logger = require('debugnyan')('foo', { level: 'info' });
+```
+
+You may also set the log level via the `LOG_LEVEL` environment variable. However, the `level` option will always take precedence over it.
+
 ## Tests
 
 ```
