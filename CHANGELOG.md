@@ -1,5 +1,8 @@
 # Changelog
 
+## [v4.1.0](https://github.com/uphold/debugnyan/releases/tag/v4.1.0) (2023-11-22)
+- Add support for `LOG_LEVEL` env variable [\#148](https://github.com/uphold/debugnyan/pull/148) ([satazor](https://github.com/satazor))
+
 ## [v4.0.0](https://github.com/uphold/debugnyan/releases/tag/v4.0.0) (2023-11-20)
 - Fix release workflow [\#147](https://github.com/uphold/debugnyan/pull/147) ([satazor](https://github.com/satazor))
 - Pass NPM_TOKEN to release step [\#146](https://github.com/uphold/debugnyan/pull/146) ([satazor](https://github.com/satazor))
