@@ -1,5 +1,8 @@
 # Changelog
 
+## [v4.1.1](https://github.com/uphold/debugnyan/releases/tag/v4.1.1) (2023-11-23)
+- Add support for omitting the options param [\#138](https://github.com/uphold/debugnyan/pull/138) ([luisdralves](https://github.com/luisdralves))
+
 ## [v4.1.0](https://github.com/uphold/debugnyan/releases/tag/v4.1.0) (2023-11-22)
 - Add support for `LOG_LEVEL` env variable [\#148](https://github.com/uphold/debugnyan/pull/148) ([satazor](https://github.com/satazor))
 
