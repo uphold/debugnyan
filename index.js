@@ -43,7 +43,7 @@ module.exports = function debugnyan(name, options = {}, { prefix = 'sub', simple
   }
 
   if (debug.enabled(name)) {
-    // eslint-disable-next-line no-process-env
+    // eslint-disable-next-line node-plugin/no-process-env
     loggers[name].level(options?.level ?? process.env.LOG_LEVEL ?? bunyan.DEBUG);
   }
 

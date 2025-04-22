@@ -27,25 +27,22 @@
     "access": "public"
   },
   "scripts": {
-    "lint": "uphold-scripts lint .",
+    "lint": "eslint",
     "release": "release-it",
-    "test": "uphold-scripts test"
+    "test": "node --test test/index.test.js"
   },
   "pre-commit": [
     "lint"
   ],
-  "jest": {
-    "collectCoverageFrom": [
-      "index.js"
-    ]
-  },
   "dependencies": {
     "bunyan": "^1.8.15",
-    "debug": "^4.3.4"
+    "debug": "^4.4.0"
   },
   "devDependencies": {
-    "release-it": "^17.0.0",
-    "uphold-scripts": "^0.7.1"
+    "eslint": "~9.23.0",
+    "eslint-config-uphold": "^6.4.1",
+    "prettier": "^3.5.3",
+    "release-it": "^19.0.1"
   },
   "engines": {
     "node": ">=18"
